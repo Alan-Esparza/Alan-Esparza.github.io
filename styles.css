@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.login-container {
+    display: flex;
+    max-width: 700px; /* Ajustar el ancho total del contenedor */
+    width: 90%;
+    padding: 0; /* Eliminar padding para que no haya espacio */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 1; /* Toma espacio proporcional en el contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.left-image {
+    width: 70%; /* Ajustar el ancho de la imagen (aquí puedes cambiar el tamaño) */
+    height: auto; /* Mantiene proporción */
+}
+
+.form-container {
+    flex: 1; /* Toma espacio proporcional en el contenedor */
+    padding: 0 20px; /* Espacio entre la imagen y el formulario */
+    max-width: 300px; /* Limita el ancho del formulario para que no sea muy grande */
+    width: 100%; /* Asegura que ocupe el 100% de su contenedor */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em; /* Espacio entre los logos y el formulario */
+}
+
+.tec-logo {
+    height: 40px; /* Ajusta la altura de los logos del Tec */
+    margin: 0 5px; /* Espacio entre los logos */
+}
+
+.login-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #1877f2;
+}
+
+label {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 0.5em; /* Ajusta el padding para que sea más pequeño */
+    margin-top: 0.3em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+button {
+    width: 100%;
+    padding: 0.7em; /* Ajusta el padding del botón */
+    margin-top: 1em;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #165eaa;
+}
+
+.extra-options {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #1877f2;
+}
+
+.extra-options a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+}

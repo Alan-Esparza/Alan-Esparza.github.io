@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="root" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylessss.css"> <!-- Enlazar el CSS separado -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2"/>
+                </svg>
+                La Colmena
+            </div>
+            <div class="search-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="7" stroke="#666" stroke-width="2"/>
+                    <path d="M20 20L16 16" stroke="#666" stroke-width="2"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="https://example.com/messages">Messages</a>
+                <a href="https://example.com/notifications">Notifications</a>
+                <a href="https://example.com/profile">Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-header"></div>
+    
+    <main class="profile-info">
+        <div class="large-profile-image">
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/>
+                <path d="M4 20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20" stroke="white" stroke-width="2"/>
+            </svg>
+        </div>
+        
+        <button class="edit-profile-btn">Edit Profile</button>
+        
+        <h1>John Doe</h1>
+        <p style="color: #666; margin-bottom: 1rem;">@johndoe</p>
+        <p>Digital creator | Photography enthusiast | Coffee lover</p>
+        
+        <div class="profile-stats">
+            <div class="stat-item">
+                <div class="stat-number">542</div>
+                <div class="stat-label">Posts</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12.4k</div>
+                <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,024</div>
+                <div class="stat-label">Following</div>
+            </div>
+        </div>
+        
+        <div class="profile-tabs">
+            <div class="profile-tab active">Posts</div>
+            <div class="profile-tab">Photos</div>
+            <div class="profile-tab">Videos</div>
+            <div class="profile-tab">Liked</div>
+        </div>
+        
+        <div class="profile-grid">
+            <div class="profile-post animate-in">
+                <div class="profile-post-image">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="16" height="16" rx="2" stroke="white" stroke-width="2"/>
+                        <circle cx="8" cy="8" r="2" stroke="white" stroke-width="2"/>
+                        <path d="M4 19L8 15L12 19" stroke="white" stroke-width="2"/>
+                        <path d="M12 19L16 15L20 19" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="profile-post-content">
+                    <p>Beautiful sunset today! 🌅</p>
+                </div>
+            </div>
+            <!-- More profile posts -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-in');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                observer.observe(element);
+            });
+
+            const tabs = document.querySelectorAll('.profile-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

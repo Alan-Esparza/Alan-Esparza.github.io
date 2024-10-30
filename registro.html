@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar en mi red social</title>
+    <link rel="stylesheet" href="styless.css"> <!-- Enlaza con tu archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fi fi-brands-facebook" width="30" height="30"></i>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2 class="title">Crea una cuenta</h2>
+            <p class="subtitle">Es rápido y fácil.</p>
+            <form id="form-register" action="registrar.php" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                    <div class="dob-container">
+                        <select id="dia" name="dia" required>
+                            <option value="">Día</option>
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <select id="mes" name="mes" required>
+                            <option value="">Mes</option>
+                            <option value="1">Ene</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Abr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Ago</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dic</option>
+                        </select>
+                        <select id="anio" name="anio" required>
+                            <option value="">Año</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Género:</label>
+                    <div class="gender-options">
+                        <label><input type="radio" name="genero" value="mujer" required>Mujer</label>
+                        <label><input type="radio" name="genero" value="hombre">Hombre</label>
+                        <label><input type="radio" name="genero" value="personalizado">Personalizado</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Número de celular o correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contraseña">Contraseña nueva:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
+                </div>
+
+                <p class="info-text">Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a Facebook. Más información.</p>
+
+                <button type="submit" class="btn">Registrarte</button>
+            </form>
+
+            <p class="info-text">Al hacer clic en "Registrarte", aceptas nuestras <a href="#">Condiciones</a>, la <a href="#">Política de privacidad</a> y la <a href="#">Política de cookies</a>. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.</p>
+            <div class="extra-options">
+                <a href="login.html">¿Ya tienes una cuenta? Inicia Sesión</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Red Social</p>
+    </footer>
+</body>
+</html>
